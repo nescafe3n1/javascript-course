@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JavaScript Fundamentals – Part 2</title>
-    <style>
-      body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(to top left, #28b487, #7dd56f);
-      }
-      h1 {
-        font-family: sans-serif;
-        font-size: 50px;
-        line-height: 1.3;
-        width: 100%;
-        padding: 30px;
-        text-align: center;
-        color: white;
-      }
-    </style>
+    <title>Interactive Score Tracker</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>JavaScript Fundamentals – Part 2</h1>
+    <div id="scoreTracker">
+      <h1>⚡ Interactive Score Tracker</h1>
+      <div class="players">
+        <div class="player player-1">
+          <h2>Player 1</h2>
+          <div class="score" id="score-1">0</div>
+          <button class="btn-add" data-player="1">+1 Point</button>
+        </div>
+        <div class="player player-2">
+          <h2>Player 2</h2>
+          <div class="score" id="score-2">0</div>
+          <button class="btn-add" data-player="2">+1 Point</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="btn-reset">🔄 Reset Game</button>
+        <input type="number" id="winning-score" value="5" min="1" max="20" />
+        <label for="winning-score">Points to Win</label>
+      </div>
+      <div class="game-info">
+        <p class="status">First to <span class="target">5</span> wins!</p>
+        <p class="winner hidden">
+          🎉 <span class="winner-name">Player</span> Wins!
+        </p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
