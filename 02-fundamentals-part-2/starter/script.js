@@ -868,94 +868,94 @@
 
 // Code here
 
-const player1ScoreEl = document.querySelector("#score-1");
-const player2ScoreEl = document.querySelector("#score-2");
-const addBtns = document.querySelectorAll(".btn-add");
-const resetBtn = document.querySelector("#btn-reset");
-const winningScoreInput = document.querySelector("#winning-score");
-const targetScoreEl = document.querySelector(".target");
-const winnerMessageEl = document.querySelector(".winner");
-const winnerNameEl = document.querySelector(".winner-name");
-const playerEls = document.querySelectorAll(".player");
-const gameState = {
-  scores: [0, 0],
-  winningScore: 5,
-  gameActive: true,
-};
+// const player1ScoreEl = document.querySelector("#score-1");
+// const player2ScoreEl = document.querySelector("#score-2");
+// const addBtns = document.querySelectorAll(".btn-add");
+// const resetBtn = document.querySelector("#btn-reset");
+// const winningScoreInput = document.querySelector("#winning-score");
+// const targetScoreEl = document.querySelector(".target");
+// const winnerMessageEl = document.querySelector(".winner");
+// const winnerNameEl = document.querySelector(".winner-name");
+// const playerEls = document.querySelectorAll(".player");
+// const gameState = {
+//   scores: [0, 0],
+//   winningScore: 5,
+//   gameActive: true,
+// };
 
-function updateDisplay() {
-  player1ScoreEl.textContent = gameState.scores[0];
-  player2ScoreEl.textContent = gameState.scores[1];
-  targetScoreEl.textContent = gameState.winningScore;
-}
+// function updateDisplay() {
+//   player1ScoreEl.textContent = gameState.scores[0];
+//   player2ScoreEl.textContent = gameState.scores[1];
+//   targetScoreEl.textContent = gameState.winningScore;
+// }
 
-function checkWinner() {
-  const [score1, score2] = gameState.scores;
-  if (score1 >= gameState.winningScore || score2 >= gameState.winningScore) {
-    gameState.gameActive = false;
-    showWinner();
-  }
-}
+// function checkWinner() {
+//   const [score1, score2] = gameState.scores;
+//   if (score1 >= gameState.winningScore || score2 >= gameState.winningScore) {
+//     gameState.gameActive = false;
+//     showWinner();
+//   }
+// }
 
-function showWinner() {
-  const [score1, score2] = gameState.scores;
-  winnerMessageEl.classList.remove("hidden");
+// function showWinner() {
+//   const [score1, score2] = gameState.scores;
+//   winnerMessageEl.classList.remove("hidden");
 
-  if (score1 > score2) {
-    winnerNameEl.textContent = "Player 1";
-    playerEls[0].classList.add("winner");
-    playerEls[1].classList.add("loser");
-  } else {
-    winnerNameEl.textContent = "Player 2";
-    playerEls[1].classList.add("winner");
-    playerEls[0].classList.add("loser");
-  }
-}
+//   if (score1 > score2) {
+//     winnerNameEl.textContent = "Player 1";
+//     playerEls[0].classList.add("winner");
+//     playerEls[1].classList.add("loser");
+//   } else {
+//     winnerNameEl.textContent = "Player 2";
+//     playerEls[1].classList.add("winner");
+//     playerEls[0].classList.add("loser");
+//   }
+// }
 
-function resetGame() {
-  gameState.scores = [0, 0];
-  gameState.gameActive = true;
-  updateDisplay();
-  winnerMessageEl.classList.add("hidden");
+// function resetGame() {
+//   gameState.scores = [0, 0];
+//   gameState.gameActive = true;
+//   updateDisplay();
+//   winnerMessageEl.classList.add("hidden");
   
-  playerEls.forEach((playerEl) => {
-    playerEl.classList.remove("winner", "loser");
-  });
-}
+//   playerEls.forEach((playerEl) => {
+//     playerEl.classList.remove("winner", "loser");
+//   });
+// }
 
-function addPoint(playerIndex) {
-  if (gameState.gameActive) {
-    gameState.scores[playerIndex]++;
-    updateDisplay();
-    checkWinner();
-  }
-}
+// function addPoint(playerIndex) {
+//   if (gameState.gameActive) {
+//     gameState.scores[playerIndex]++;
+//     updateDisplay();
+//     checkWinner();
+//   }
+// }
 
-addBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => addPoint(index));
-});
+// addBtns.forEach((btn, index) => {
+//   btn.addEventListener("click", () => addPoint(index));
+// });
 
-resetBtn.addEventListener("click", resetGame);
+// resetBtn.addEventListener("click", resetGame);
 
-winningScoreInput.addEventListener("input", function (event) {
-  const newWinningScore = parseInt(event.target.value);
-  if (!isNaN(newWinningScore) && newWinningScore > 0) {
-    gameState.winningScore = newWinningScore;
-    updateDisplay();
-    resetGame();
-  }
-});
+// winningScoreInput.addEventListener("input", function (event) {
+//   const newWinningScore = parseInt(event.target.value);
+//   if (!isNaN(newWinningScore) && newWinningScore > 0) {
+//     gameState.winningScore = newWinningScore;
+//     updateDisplay();
+//     resetGame();
+//   }
+// });
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "1") {
-    addPoint(0);
-  } else if (event.key === "2") {
-    addPoint(1);
-  } else if (event.key === "r") {
-    resetGame();
-  }
-});
+// document.addEventListener("keydown", function (event) {
+//   if (event.key === "1") {
+//     addPoint(0);
+//   } else if (event.key === "2") {
+//     addPoint(1);
+//   } else if (event.key === "r") {
+//     resetGame();
+//   }
+// });
 
-updateDisplay();
+// updateDisplay();
 
 // JavaScript Fundamentals Part 2 - Hour 4 - End
