@@ -181,7 +181,8 @@ git commit
 
 Copy this commit message:
 
-```feat: add visual feedback, validation, and final polish
+```
+feat: add visual feedback, validation, and final polish
 
 - Implement win/lose visual feedback via background color changes
 - Add input validation with helpful error messages and early returns
