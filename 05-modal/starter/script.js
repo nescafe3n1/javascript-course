@@ -4,6 +4,8 @@ console.log('=== MODAL DEVELOPMENT: FOUNDATION & CLASS TOGGLING ===');
 
 console.log('Modal project ready!');
 
+//
+
 const modalEl = document.querySelector('.modal');
 const overlayEl = document.querySelector('.overlay');
 const btnCloseModalEl = document.querySelector('.close-modal');
